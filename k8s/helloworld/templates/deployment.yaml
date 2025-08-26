@@ -13,14 +13,10 @@ spec:
     spec:
       containers:
       - name: helloworld-app
-        image: ghcr.io/pumpkinspython/helloworld-cicd:v0.0.1-alpha
-        resources:
-          requests:
-            memory: "64Mi"
-            cpu: "100m"
-          limits:
-            memory: "128Mi"
-            cpu: "500m"
+        image: "{{ .Values.image.repository }}:{{ .Values.image.tag | default "latest" }}"
+        imagePullPolicy: {{ .Values.image.pullPolicy }}
+        resources: 
+        {{ .Values.resources }}
         ports:
         - name: http
           containerPort: 80

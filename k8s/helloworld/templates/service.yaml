@@ -7,5 +7,6 @@ spec:
     app: helloworld-app
   ports:
     - name: http
-      port: 80
+      port: {{ .Values.service.port }}
       targetPort: http
+  type: {{ .Values.service.type }}
