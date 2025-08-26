@@ -13,7 +13,7 @@ spec:
     spec:
       containers:
       - name: helloworld-app
-        image: ghcr.io/pumpkinspython/helloworld-cicd
+        image: ghcr.io/pumpkinspython/helloworld-cicd:v0.0.1-alpha
         resources:
           requests:
             memory: "64Mi"
