@@ -20,8 +20,8 @@ spec:
             memory: {{ .Values.resources.requests.memory }}
             cpu: {{ .Values.resources.requests.cpu }}
           limit:
-            memory: {{ .Values.resources.requests.memory }}
-            cpu: {{ .Values.resources.requests.cpu }}
+            memory: {{ .Values.resources.limit.memory }}
+            cpu: {{ .Values.resources.limit.cpu }}
         ports:
         - name: http
           containerPort: 80
