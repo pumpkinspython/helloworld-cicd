@@ -13,7 +13,7 @@ spec:
     spec:
       containers:
       - name: helloworld-app
-        image: <Image> # TODO create a docker image
+        image: ghcr.io/pumpkinspython/helloworld-cicd
         resources:
           requests:
             memory: "64Mi"
