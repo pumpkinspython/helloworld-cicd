@@ -7,16 +7,16 @@ metadata:
     app.kubernetes.io/name: helloworld-ingress
 spec:
   rules:
-  {{- with .Values.ingress.hosts }}
-  - host: {{ .host }}
-    http:
-      paths:
-      - pathType: Prefix
-        path: {{ .path }}
-        backend:
-          service:
-            name: helloworld-service
-            port: 
-              number: 80
+  {{- range .Values.ingress.hosts }}
+    - host: {{ .host }}
+      http:
+        paths:
+          - pathType: Prefix
+            path: {{ .path }}
+            backend:
+              service:
+                name: helloworld-service
+                port: 
+                  number: 80
   {{- end }}
-{{- end }}
+{{ end }}
